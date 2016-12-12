@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="CTS.NFT.word.editor.api">
+    <module_version install_time="1481542487620" last="true" origin="installer" specification_version="1.0">
+        <file crc="1947169249" name="config/Modules/CTS-NFT-word-editor-api.xml"/>
+        <file crc="3757510731" name="modules/CTS-NFT-word-editor-api.jar"/>
+    </module_version>
+</module>

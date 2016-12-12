@@ -1,0 +1,5 @@
+||:CTS.NFT.word.editor.uppercase.UppercaseFilter
+java.lang.Object
+java.lang.String
+CTS.NFT.word.editor.uppercase.UppercaseFilter
+CTS.NFT.word.editor.api.WordFilter

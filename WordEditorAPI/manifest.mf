@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+OpenIDE-Module: CTS.NFT.word.editor.api
+OpenIDE-Module-Localizing-Bundle: CTS/NFT/word/editor/api/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

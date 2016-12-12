@@ -1,0 +1,9 @@
+D:\Software\NetBeans 8.1\platform=1466591624762
+cluster.D:/NetBeans Workspace/WordProcessor/build/cluster=1481542488624
+cluster.D:/Software/NetBeans 8.1/platform=1466591624762
+user=1481542488624
+crc=7
+locale=en_US
+branding=wordprocessor
+java.version=1.8.0_74
+java.vm.version=25.74-b31

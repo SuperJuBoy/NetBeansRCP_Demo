@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="CTS.NFT.word.editor.lowercase">
+    <module_version install_time="1481542488394" last="true" origin="installer" specification_version="1.0">
+        <file crc="3843632304" name="config/Modules/CTS-NFT-word-editor-lowercase.xml"/>
+        <file crc="3734132840" name="modules/CTS-NFT-word-editor-lowercase.jar"/>
+    </module_version>
+</module>

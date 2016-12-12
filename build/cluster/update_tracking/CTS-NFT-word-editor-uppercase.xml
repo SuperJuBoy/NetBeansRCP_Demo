@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="CTS.NFT.word.editor.uppercase">
+    <module_version install_time="1481542488574" last="true" origin="installer" specification_version="1.0">
+        <file crc="2579692601" name="config/Modules/CTS-NFT-word-editor-uppercase.xml"/>
+        <file crc="187345111" name="modules/CTS-NFT-word-editor-uppercase.jar"/>
+    </module_version>
+</module>
