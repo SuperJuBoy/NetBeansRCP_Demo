@@ -5,9 +5,13 @@
  */
 package CTS.NFT.word.editor.history;
 
+import java.util.Collection;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
+import org.openide.util.Lookup;
+import org.openide.util.LookupEvent;
+import org.openide.util.LookupListener;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 
@@ -35,8 +39,10 @@ import org.openide.util.NbBundle.Messages;
     "CTL_WordHistoryTopComponent=WordHistory Window",
     "HINT_WordHistoryTopComponent=This is a WordHistory window"
 })
-public final class WordHistoryTopComponent extends TopComponent {
+public final class WordHistoryTopComponent extends TopComponent implements LookupListener {
 
+    private org.openide.util.Lookup.Result<String> result;
+    
     public WordHistoryTopComponent() {
         initComponents();
         setName(Bundle.CTL_WordHistoryTopComponent());
@@ -52,30 +58,49 @@ public final class WordHistoryTopComponent extends TopComponent {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        historyText = new javax.swing.JTextArea();
+
+        historyText.setColumns(20);
+        historyText.setRows(5);
+        jScrollPane1.setViewportView(historyText);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea historyText;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
-        // TODO add custom code on component opening
+        result = org.openide.util.Utilities.actionsGlobalContext().lookupResult(String.class);
+        result.addLookupListener(this);
     }
 
     @Override
     public void componentClosed() {
-        // TODO add custom code on component closing
+        result.removeLookupListener(this);
     }
 
+    public void resultChanged(LookupEvent le){
+        Collection<? extends String> allStrings = result.allInstances();
+        StringBuilder sb = new StringBuilder();
+        for (String string : allStrings) {
+            sb.append(string).append("\n");
+        }
+        historyText.setText(sb.toString());
+    }
+    
     void writeProperties(java.util.Properties p) {
         // better to version settings since initial version as advocated at
         // http://wiki.apidesign.org/wiki/PropertyFiles
